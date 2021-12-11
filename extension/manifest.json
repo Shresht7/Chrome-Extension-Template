@@ -1,0 +1,33 @@
+{
+  "name": "MyExtension",
+  "description": "A chrome-extension",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "My Extension",
+    "default_popup": "popup/index.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "commands": {
+    "Ctrl+Q": {
+      "suggested_key": {
+        "default": "Ctrl+Q",
+        "mac": "Command+Q"
+      },
+      "description": "Reload Extension"
+    }
+  },
+  "permissions": []
+}
