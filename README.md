@@ -9,7 +9,7 @@ A starter template for building chrome-extensions.
 To enable TypeScript in this project install the relevant dependencies
 
 ```
-npm install --save-dev typescript @types/chrome
+npm install --save-dev typescript
 ```
 
 Initialize `tsconfig.json` using
@@ -62,3 +62,53 @@ ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
 Update references (i.e. file extensions) in `.esbuild.config.js`
+
+## Svelte
+---------
+
+Install `esbuild-svelte` plugin
+
+```
+npm install --save-dev esbuild-svelte
+```
+
+Enable the svelte plugin in `.esbuild.config.js`
+
+```js
+const sveltePlugin = require('esbuild-svelte')
+
+//  ...
+
+const config = {
+    //  ...
+    plugins: [sveltePlugin()]
+    //  ...
+}
+
+```
+
+Create a svelte component `.App.svelte`
+
+```html
+<script>
+    let name = 'Rich'
+</script>
+
+<h1>Hello {name}!</h1>
+
+<style>
+    h1 {
+        color: red;
+    }
+</style>
+```
+
+Import the component in `script.js`
+
+```js
+import App from './App.svelte'
+
+new App({
+    target: document.body
+})
+```
