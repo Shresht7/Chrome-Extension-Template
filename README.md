@@ -6,7 +6,7 @@ A starter template for building chrome-extensions.
 ## TypeScript
 -------------
 
-To enable TypeScript in this project install the relevant dependencies
+To enable TypeScript in this project install the dependency
 
 ```
 npm install --save-dev typescript
@@ -66,7 +66,7 @@ Update references (i.e. file extensions) in `.esbuild.config.js`
 ## Svelte
 ---------
 
-Install `esbuild-svelte` plugin
+To enable Svelte in the project, install the `esbuild-svelte` plugin
 
 ```
 npm install --save-dev esbuild-svelte
@@ -111,4 +111,38 @@ import App from './App.svelte'
 new App({
     target: document.body
 })
+```
+
+### + TypeScript
+
+Install svelte-preprocess
+
+```
+npm install --save-dev svelte-preprocess
+```
+
+Enable preprocess in `.esbuild.config.js`
+
+```js
+const sveltePreprocess = require('svelte-preprocess')
+
+const config = {
+    // ...
+    plugins: [
+        sveltePlugin({
+            preprocess: sveltePreprocess()
+        })
+    ]
+    //  ...
+}
+```
+
+Update svelte components to use TypeScript
+
+```html
+<script lang='ts'>
+    let name: string = 'Rich'
+</script>
+
+<h1>Hello {name}!</h1>
 ```
