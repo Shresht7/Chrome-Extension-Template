@@ -4,7 +4,6 @@
 A starter template for building chrome-extensions.
 
 ## TypeScript
--------------
 
 To enable TypeScript in this project install the dependency
 
@@ -25,7 +24,6 @@ Rename all files with `.js` extension to `.ts` extension.
 TypeScript away!
 
 ## React
---------
 
 To enable React in this project install the relevant dependencies
 
@@ -64,7 +62,6 @@ ReactDOM.render(<App />, document.getElementById('root'))
 Update references (i.e. file extensions) in `.esbuild.config.js`
 
 ## Svelte
----------
 
 To enable Svelte in the project, install the `esbuild-svelte` plugin
 
