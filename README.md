@@ -105,12 +105,10 @@ Import the component in `script.js`
 ```js
 import App from './App.svelte'
 
-new App({
-    target: document.body
-})
+new App({ target: document.body })
 ```
 
-### + TypeScript
+### + Preprocess
 
 Install svelte-preprocess
 
